@@ -34,8 +34,7 @@ class BinarySearchTree {
     }
   }
 
-  find(/* data */) {
-    // Remove line below and write your code here
+  find(/*data*/) {
     throw new NotImplementedError("Not implemented");
   }
 
