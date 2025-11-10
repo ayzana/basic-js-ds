@@ -40,8 +40,20 @@ class BinarySearchTree {
   }
 
   has(data) {
-    // Remove line below and write your code here
-    throw new NotImplementedError("Not implemented");
+    return hasNodeTree(this.root, data);
+    function hasNodeTree(nodeTree, data) {
+      if (!nodeTree) {
+        return false;
+      }
+      if (nodeTree.data === data) {
+        return true;
+      }
+      if (nodeTree.data > data) {
+        return hasNodeTree(nodeTree.left, data);
+      } else {
+        return hasNodeTree(nodeTree.right, data);
+      }
+    }
   }
 
   remove(/* data */) {
