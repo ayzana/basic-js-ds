@@ -22,13 +22,13 @@ class Queue {
   }
 
   enqueue(value) {
-    const newNode = new ListNode(value);
+    const newNode = { value, next: null };
     !this.first ? (this.first = newNode) : (this.last.next = newNode);
     this.last = newNode;
   }
 
   dequeue() {
-    if (!this.first) return null;
+    if (!this.first) return undefined;
     const firstValue = this.first.value;
     this.first = this.first.next;
     if (!this.first) this.last = null;
