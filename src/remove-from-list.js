@@ -22,14 +22,16 @@ const { NotImplementedError } = require("../lib/errors");
  * }
  */
 function removeKFromList(l, k) {
-  likedList = l;
-  let el
-  while (likedList) {
-    if (l.value === k) {
-      current.next = current.next.next;
+  let linkedList = l;
+  let node = null;
+
+  while (linkedList) {
+    if (linkedList.value === k) {
+      node ? (node.next = linkedList.next) : (l = linkedList.next);
     } else {
-      current = current.next;
+      node = linkedList;
     }
+    linkedList = linkedList.next;
   }
 
   return l;
